@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/tables.css' %}" rel="stylesheet">
+    <link href="{% static 'css/add.css' %}" rel="stylesheet">
+    <link href="{% static 'css/nav.css' %}" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" src="extensions/sticky-header/bootstrap-table-sticky-header.css">
+    <script src="extensions/sticky-header/bootstrap-table-sticky-header.js"></script>
+    <style>
+      html{
+	scroll-behavior: smooth;
+ }
+ body{
+    background: linear-gradient(60deg,#f1e7d7a8, #f3e7d89c 50%,#f1eee8a2 50%);
+}
+    </style>
+
+
+</head>
+{% block content %}
+<title>Home - Activity Scheduling App</title>
+<nav id="header" class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button class=" btn d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse collapse" data-toggle="collapse" aria-expanded="false" id="navbarNav">
+        <ul class="nav navbar-nav">
+          <li class="nav-item text-center active">
+            <a class="nav-link link" href="{% url 'selection' %}" id="bb"> <img src="{% static 'media/smartxlogo.jpg.png' %}" style="width: 150px;height: 51px;margin-top: -15px;"></a>
+          </li>
+          <li class="nav-item text-center active">
+            <a class="nav-link link" href="{% url 'selection' %}" id="bb">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link link" href="#professor_display" id="bb">YourSchedule</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link link" href="#course_display" id="bb">Professors</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link link " href="#classroom_display" id="bb">Classrooms</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link link " href="#professor" id="bb">Classes</a>
+          </li>
+
+        </ul>
+      </div>
+        </div>
+</nav>
+
+    <img id="branding" src="{% static 'media/Screenshot__376_-removebg-preview.png' %}" height="650px">
+
+    <div><h1 id="tag">SMART TIMETABLE</h1></div>
+    <div><p id="para1">This is a SMARTTIMETABLE which enables students to view time so that they are always aware of their classes .Teachers can edit
+      or create timetable for students . This is usefull especially for university students and teachers with a lot of students with varying timetable.</p></div>
+    <a href="{% url 'class_view' %}"><input type="button" class="button" value="Get Started"></a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<br>
+<br>
+
+ <hr>
+    <div id="course_display">
+        <div id="courses">
+            <h3 id="tag_course">Feed Timetable</h3>
+            <p id="para_course">You can easily feed timetable into database by just clicking the button below. This data will be retrieved while generating the time table.
+              It will be visible for users.
+            </p>
+            <a  href="{% url 'add-course' %}"><button class="course_button" >FEED</button></a>
+        </div>
+        <div><img id="course_img" src="{% static 'media/courses-01.png' %}"></div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<hr>
+    <div id="professor_display">
+        <div id="professor">
+            <h3 id="prof_tag">View Timetable</h3>
+            <p id="prof_para">TimeTable viewing facility for students and professor is available.
+              You will be directed to the professor/student section accordingly form where you will be able to see your schedule.
+            </p>
+            <a href="{% url 'add-professor' %}"><input type="button" class="button" value="VIEW TIMETABLE"></a>
+        </div>
+         <div><img alt="professor" id="prof_img" src="{% static 'media/professor-01.png' %}"></div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+    <div id="classroom_display">
+        <div id="courses">
+            <h3 id="tag_course">Classrooms</h3>
+            <p id="para_course">In this app, You have facility to see your classroom or lab where your class is scheduled to avoid unnecessary hasle.</p>
+            <a href="{% url 'add-classroom' %}"><button class="course_button">Classroom</button></a>
+        </div>
+         <div><img  id="course_img" src="{% static 'media/classroom.png' %}"></div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+
+<br>
+<br>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); 
+#tag{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 80px;
+}
+#tag_course,#prof_tag{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 60px;
+}
+  #prof_para{
+    font-size:23px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+  }
+  #para_course{
+    font-size:23px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+  }
+  #para1{
+    font-size:23px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+  }
+  #insta{
+	color: rgb(216, 82, 105);
+	cursor: pointer;
+ }
+ #faceb{
+ color: rgb(27, 27, 120);
+ cursor: pointer;
+ }
+ #twi{
+	color:rgb(108, 177, 200);
+	cursor: pointer;
+ }
+ #yt{
+	color:red;
+	cursor: pointer;
+ }
+ .columns{
+	display: flex;
+	margin: 7%;
+	padding: 70px;
+	background-color: rgba(242, 216, 99, 0.23);
+	border-radius: 20px;
+	font-size:large;
+ }
+ .column1-row{
+	margin: 20px;
+ }
+ .column2-row{
+	margin: 20px;
+ }
+ .column3-row{
+	margin: 20px;
+ }
+ .column4-row{
+	margin: 20px;
+ }
+ #cont{
+    border-radius: 34px;   
+}
+ .field{
+    padding: 10px;
+    margin: 5px;
+}
+#div_c{
+    background:linear-gradient(aquamarine,rgba(0,0,0,0.2));
+    height: 500px;
+    width: 900px;
+}
+.fieldcontent{
+    padding-left: 180px;
+    padding-top: 50px;
+    /* background:linear-gradient(aquamarine,rgba(0,0,0,0.3)); */
+    border-radius: 34px;
+   
+}
+
+#ha_ok{
+    background-color: cadetblue;
+    cursor: pointer;
+height: 40px;
+width: 80px;
+font-size: 18px;
+margin-left: 60px;
+margin-top: 23px;
+border-radius: 16px;
+border-style: hidden;
+font-weight:400;
+margin-bottom: 25px;
+}
+#ha_ok:hover{
+    background-color:chocolate;
+    color:azure;
+    width: 83px;
+    height: 42px;
+}
+#cont input{
+    border-radius: 16px;
+font-size: 16px;
+border-style: hidden;
+font-family: Helvetica;
+}
+#cont textarea{
+    border-radius: 16px;
+font-size: 16px;
+border-style: hidden;
+font-family: Helvetica;
+}
+</style>
+<script>
+  src="https://kit.fontawesome.com/64d58efce2.js"
+  crossorigin="anonymous"
+ </script>
+
+
+<section id="cont" >
+  <div id='div_c' style="width: 600px;height: 450px;border-radius: 40px;margin: 35%;margin-top: 90px;margin-bottom: 90px;">
+  <div class="fieldcontent">
+                  <h2 style="padding-left: 35px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 30px;" >Contact Us</h2>
+          <input type="text" class="field" placeholder="Your Name"><br>
+          <input type="text" class="field" placeholder="Your Email"><br>
+          <input type="text" class="field" placeholder="Phone"><br>
+          <textarea placeholder="Message" class="field"></textarea><br>
+          <button  id="ha_ok" >Send</button>
+  </div>
+  </div>
+  </section>
+
+<footer id="ayushfooter">
+  <div class="columns">
+      <div class="column1">
+          <img src="{% static 'media/smartxlogo.jpg.png' %}" alt="logo" style="width:200px">
+          <p style="font-size:13px;">Solution for easy and flexible learning.</p>
+      </div>
+      <div class="column2-row">
+          <h4>Programs</h4>
+          <p>Learning Modules</p>
+          <p>Partnership</p>
+          <p>Event</p>
+          <p>Watch Demo</p>
+          
+      </div>
+      <div class="column3-row">
+          <h4>About</h4>
+          <p>Our Company</p>
+          <p>Career</p>
+          <p>Investor Relations</p>
+          <p>Social Impact</p>
+          
+      </div>
+      <div class="column3-row">
+          <h4>Resources</h4>
+          <p>Contact</p>
+          <p>Give Feedback</p>
+          <p>System Status</p>
+          <p>Privacy Policy</p>
+          
+      </div>
+      <div class="column4-row">
+          <h2>Social Media</h2>
+          <script src="https://kit.fontawesome.com/750e7d8137.js" crossorigin="anonymous"></script>
+          <div class="social">
+              <i class="fab fa-instagram fa-2x" id="insta"></i>
+              <i class="fab fa-facebook-f fa-2x" id="faceb"></i>
+              <i class="fab fa-twitter fa-2x" id="twi"></i>
+              <i class="fab fa-youtube fa-2x" id="yt"></i>
+          </div>
+          
+      </div>
+  </div>
+</footer>
+
+
+
+{% endblock %}
+
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
